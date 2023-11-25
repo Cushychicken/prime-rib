@@ -25,11 +25,16 @@
         }
 		.frosted-glass {
             backdrop-filter: blur(5px);
-            background-color: rgba(255, 255, 255, 0.7); /* White background with a bit of transparency */
-            border-radius: 15px; /* Rounded corners */
-            padding: 20px; /* Some padding around the content */
-            border: 1px solid rgba(255, 255, 255, 0.18); /* Optional: adds a light border */
+            background-color: rgba(255, 255, 255, 0.7); 
+            border-radius: 15px; 
+            padding: 20px; 
+            border: 1px solid rgba(255, 255, 255, 0.18); 
         }
+		.card-img-top {
+			height: 200px; 
+			object-fit: contain; 
+			width: 100%; 
+		}
     </style>
 
     <!-- JS Cooking Calculator -->
@@ -62,8 +67,8 @@
         }
     </script>
 
-	<!-- Structured Data for Recipe (JSON-LD) -->
 	{% if page.layout == "recipe" %}
+	<!-- Structured Data for Recipe (JSON-LD) -->
 	<script type="application/ld+json">
 	{
 	  "@context": "http://schema.org/",
@@ -90,6 +95,16 @@
 	}
 	</script>
 	{% endif %}
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-6ELP2VR5YC"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-6ELP2VR5YC');
+	</script>
 
 </head>
 <body class="container py-4">
