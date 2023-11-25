@@ -39,11 +39,13 @@ defaults:
 collections:
   recipes-essential:
     output: true
+    permalink: /recipes/essential/:path/
   recipes-sides:
     output: true
+    permalink: /recipes/sides/:path/
   how_to:
     output: true
-      #permalink: /how-to/:path/
+    permalink: /how-to/:path/
 
 
 # Exclude from processing.
