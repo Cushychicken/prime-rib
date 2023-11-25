@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="container recipe-content frosted-glass">
+    <h1 class="recipe-title">{{ page.title }}</h1>
+    <p class="recipe-description">{{ page.description }}</p>
+    
+    <!-- Additional recipe-specific content here -->
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            {% for ingredient in page.ingredients %}
+            <li>{{ ingredient }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="instructions">
+        <h2>Instructions</h2>
+        <ol>
+            {% for step in page.instructions %}
+            <li>{{ step }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+
+    <!-- You can add more elements as needed -->
+</div>
+
+<!-- Add any recipe-specific scripts or styles here -->
+
