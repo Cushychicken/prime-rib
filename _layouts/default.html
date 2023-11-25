@@ -61,6 +61,36 @@
             document.getElementById("result").innerHTML = "Cooking Time: " + cookingTime.toFixed(2) + " minutes";
         }
     </script>
+
+	<!-- Structured Data for Recipe (JSON-LD) -->
+	{% if page.layout == "recipe" %}
+	<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org/",
+	  "@type": "Recipe",
+	  "name": "{{ page.title }}",
+	  "description": "{{ page.description }}",
+	  "image": "{{ site.url }}{{ page.image }}",
+	  "author": {
+		"@type": "Person",
+		"name": "{{ page.author | default: site.author }}"
+	  },
+	  "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+	  "recipeYield": "{{ page.yield }}",
+	  "recipeIngredient": [
+		{% for ingredient in page.ingredients %}
+		  "{{ ingredient }}"{% unless forloop.last %},{% endunless %}
+		{% endfor %}
+	  ],
+	  "recipeInstructions": [
+		{% for step in page.instructions %}
+		  "{{ step }}"{% unless forloop.last %},{% endunless %}
+		{% endfor %}
+	  ]
+	}
+	</script>
+	{% endif %}
+
 </head>
 <body class="container py-4">
 
@@ -89,11 +119,20 @@
 							{% endfor %}
 						</ul>
 					</li>
-					<!-- Other menu items -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="howToDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							How To
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="howToDropdown">
+							{% for howto in site.how_to %}
+							<li><a class="dropdown-item" href="{{ howto.url }}">{{ howto.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</li>
 				</ul>
-            </div>
-        </div>
-    </nav>
+			</div>
+		</div>
+	</nav>
 
     <div style="padding-top: 60px;">
         {{ content }}

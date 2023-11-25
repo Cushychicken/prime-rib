@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<div class="container howto-content frosted-glass">
+    <h1 class="howto-title">{{ page.title }}</h1>
+    <p class="howto-meta">
+        Posted on {{ page.date | date: "%B %d, %Y" }}
+        {% if page.author %} by {{ page.author }}{% endif %}
+    </p>
+
+    <!-- Blog-style content starts here -->
+    <div class="howto-body">
+        {{ content }}
+    </div>
+
+    <!-- You can add more elements or sections as needed -->
+</div>
+
+<style>
+    .howto-content {
+        margin-top: 20px;
+        font-family: 'Arial', sans-serif;
+    }
+    .howto-title {
+        color: #333;
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+    .howto-meta {
+        color: #666;
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+    .howto-body {
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
+    /* Add additional styling as per your design */
+</style>
+
+<!-- Add any how-to specific scripts or styles here -->
+

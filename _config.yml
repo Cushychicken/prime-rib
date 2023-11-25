@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
+title: Prime Rib Calculator
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   A handy calculator for helping you cook prime rib! 
@@ -26,7 +26,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   recipes, how-to guides, and tool suggestions!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.primeribcalculator.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
+#twitter_username: jekyllrb
 github_username:  jekyll
 
 defaults:
@@ -41,6 +41,9 @@ collections:
     output: true
   recipes-sides:
     output: true
+  how_to:
+    output: true
+      #permalink: /how-to/:path/
 
 
 # Exclude from processing.
